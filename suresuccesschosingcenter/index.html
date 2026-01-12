@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <title>Sure Success Coaching Centre</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+    <div class="logo-area">
+        <img src="images/logo.png" alt="Logo">
+        <div>
+            <h2>Sure Success Coaching Centre</h2>
+            <p class="class-range">Class 6 – 10 (SSC)</p>
+        </div>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#academics">Academics</a>
+        <a href="#activities">Activities</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- ===== HOME ===== -->
+<section id="home" class="home">
+    <h1>Welcome to Sure Success Coaching Centre</h1>
+    <p>সাফল্যের পথে আপনার নির্ভরযোগ্য সঙ্গী</p>
+    <p><strong>Classes:</strong> 6 – 10</p>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="section">
+    <h2>About Us</h2>
+    <p>
+        Sure Success Coaching Centre একটি মানসম্মত প্রাইভেট কোচিং সেন্টার।
+        এখানে Class 6 থেকে 10 পর্যন্ত শিক্ষার্থীদের
+        নিয়মিত ক্লাস, পরীক্ষা এবং বিশেষ গাইডলাইন প্রদান করা হয়।
+    </p>
+</section>
+
+<!-- ===== HEADMASTER ===== -->
+<section class="section gray">
+    <h2>Headmaster</h2>
+    <div class="headmaster-box">
+        <img src="images/headmaster.jpg" class="headmaster-img">
+        <p>
+            আমাদের কোচিং সেন্টারের প্রধান শিক্ষক একজন অভিজ্ঞ ও যত্নশীল
+            শিক্ষাবিদ, যিনি শিক্ষার্থীদের সাফল্যের পথে পরিচালিত করেন।
+        </p>
+    </div>
+</section>
+
+<!-- ===== ACADEMICS ===== -->
+<section id="academics" class="section">
+    <h2>Academics</h2>
+    <ul>
+        <li>Class 6 – 10 Academic Coaching</li>
+        <li>SSC Special Preparation</li>
+        <li>Weekly Test</li>
+        <li>Model Test</li>
+        <li>Extra Care Batch</li>
+    </ul>
+</section>
+
+<!-- ===== ACTIVITIES ===== -->
+<section id="activities" class="section gray">
+    <h2>Our Activities</h2>
+    <p>
+        আমাদের কোচিং সেন্টারে নিয়মিত শিক্ষা সফর,
+        দলগত কার্যক্রম এবং শিক্ষামূলক প্রোগ্রাম আয়োজন করা হয়।
+    </p>
+
+    <img src="images/students-group.jpg"
+         alt="Students Activity"
+         class="gallery-img">
+
+    <p class="caption">
+        📸 Students Group Activity – Sure Success Coaching Centre
+    </p>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="section">
+    <h2>Contact Us</h2>
+
+    <p>📱 WhatsApp: <strong>+8801959737517</strong></p>
+
+    <div class="social">
+        <a href="https://facebook.com/groups/507196020696334/" target="_blank">
+            Facebook Group
+        </a>
+        <a href="https://www.facebook.com/samiuli821" target="_blank">
+            Headmaster Facebook
+        </a>
+        <a href="https://wa.me/8801959737517" target="_blank">
+            WhatsApp
+        </a>
+    </div>
+
+    <form>
+        <input type="text" placeholder="আপনার নাম" required>
+        <input type="email" placeholder="আপনার ইমেইল" required>
+        <textarea placeholder="আপনার বার্তা লিখুন" required></textarea>
+        <button type="button" onclick="sendMsg()">Send Message</button>
+    </form>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <p>© 2026 Sure Success Coaching Centre | All Rights Reserved</p>
+</footer>
+
+<script>
+
+/* =========================
+   2️⃣ Confetti Animation
+========================= */
+function createConfetti() {
+    const colors = ['#ff0a54','#ff477e','#ff85a1','#fbb1b1','#f9bec7'];
+    const confettiCount = 100;
+    const container = document.createElement('div');
+
+    container.style.position = 'fixed';
+    container.style.top = '0';
+    container.style.left = '0';
+    container.style.width = '100vw';
+    container.style.height = '100vh';
+    container.style.pointerEvents = 'none';
+    container.style.zIndex = '9999';
+    document.body.appendChild(container);
+
+    for (let i = 0; i < confettiCount; i++) {
+        const confetti = document.createElement('div');
+        confetti.style.position = 'absolute';
+        confetti.style.width = '10px';
+        confetti.style.height = '10px';
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.top = '-10px';
+        confetti.style.left = Math.random() * window.innerWidth + 'px';
+        confetti.style.opacity = '0.8';
+        confetti.style.transform = `rotate(${Math.random()*360}deg)`;
+        confetti.style.borderRadius = '3px';
+        confetti.style.animation = `confettiFall ${3 + Math.random()*2}s linear forwards`;
+        container.appendChild(confetti);
+    }
+
+    if (!document.getElementById('confettiStyle')) {
+        const style = document.createElement('style');
+        style.id = 'confettiStyle';
+        style.textContent = `
+        @keyframes confettiFall {
+            to { transform: translateY(100vh) rotate(360deg); opacity:0; }
+        }`;
+        document.head.appendChild(style);
+    }
+
+    setTimeout(() => { container.remove(); }, 5000);
+}
+
+// Call Confetti after 1 second
+setTimeout(createConfetti, 1000);
+
+
+</script>
+<style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+header{
+    background:#003366;
+    color:white;
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-area img{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:white;
+    padding:3px;
+}
+
+.class-range{
+    font-size:14px;
+    color:#ffdd00;
+}
+
+header nav a{
+    color:white;
+    margin-left:15px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.home{
+    height:70vh;
+    background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+    url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1");
+    background-size:cover;
+    color:white;
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:20px;
+}
+
+.section{
+    padding:40px 20px;
+    max-width:900px;
+    margin:auto;
+}
+
+.gray{
+    background:#f2f2f2;
+}
+
+.section h2{
+    margin-bottom:15px;
+    color:#003366;
+}
+
+.section ul li{
+    margin:8px 0;
+}
+
+.headmaster-box{
+    display:flex;
+    gap:20px;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.headmaster-img{
+    width:220px;
+    border-radius:10px;
+    filter:brightness(1.1) contrast(1.1);
+    box-shadow:0 5px 15px rgba(0,0,0,.3);
+}
+
+.gallery-img{
+    width:100%;
+    max-width:900px;
+    border-radius:10px;
+    margin-top:15px;
+    filter:brightness(1.1) contrast(1.05);
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+}
+
+.caption{
+    margin-top:10px;
+    font-style:italic;
+}
+
+.social a{
+    display:inline-block;
+    margin-right:15px;
+    margin-top:10px;
+    text-decoration:none;
+    font-weight:bold;
+    color:#003366;
+}
+
+form{
+    margin-top:20px;
+}
+
+form input, form textarea{
+    width:100%;
+    padding:10px;
+    margin-bottom:10px;
+}
+
+button{
+    background:#003366;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    cursor:pointer;
+}
+
+footer{
+    background:#003366;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+</style>
+</body>
+</html>
