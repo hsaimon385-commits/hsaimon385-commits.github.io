@@ -116,38 +116,6 @@
 </footer>
 
 <script>
-    /* =========================
-   1️⃣ Bouncing Ball (Canvas)
-========================= */
-const canvas = document.createElement('canvas');
-canvas.id = "myCanvas";
-canvas.width = 500;
-canvas.height = 300;
-canvas.style.border = "1px solid #000";
-canvas.style.display = "block";
-canvas.style.margin = "20px auto";
-document.body.prepend(canvas);
-
-const ctx = canvas.getContext("2d");
-let x = 50, y = 50, dx = 3, dy = 3, radius = 20;
-
-function animateBall() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.beginPath();
-    ctx.arc(x, y, radius, 0, Math.PI * 2);
-    ctx.fillStyle = "crimson";
-    ctx.fill();
-    ctx.closePath();
-
-    x += dx;
-    y += dy;
-
-    if (x + radius > canvas.width || x - radius < 0) dx = -dx;
-    if (y + radius > canvas.height || y - radius < 0) dy = -dy;
-
-    requestAnimationFrame(animateBall);
-}
-animateBall();
 
 /* =========================
    2️⃣ Confetti Animation
@@ -197,36 +165,6 @@ function createConfetti() {
 // Call Confetti after 1 second
 setTimeout(createConfetti, 1000);
 
-/* =========================
-   3️⃣ Floating Text
-========================= */
-function floatingText(text){
-    const span = document.createElement('span');
-    span.textContent = text;
-    span.style.position = 'fixed';
-    span.style.left = Math.random() * window.innerWidth + 'px';
-    span.style.bottom = '-30px';
-    span.style.color = 'dodgerblue';
-    span.style.fontSize = '24px';
-    span.style.fontWeight = 'bold';
-    span.style.userSelect = 'none';
-    span.style.pointerEvents = 'none';
-    span.style.transition = 'transform 3s ease, opacity 3s ease';
-
-    document.body.appendChild(span);
-
-    setTimeout(() => {
-        span.style.transform = 'translateY(-150vh)';
-        span.style.opacity = '0';
-    }, 50);
-
-    setTimeout(() => { span.remove(); }, 3050);
-}
-
-// Call floating text every 2 seconds
-setInterval(() => {
-    floatingText("Sure Success Coaching Centre");
-}, 2000);
 
 </script>
 <style>
